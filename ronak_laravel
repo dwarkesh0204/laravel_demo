@@ -1,0 +1,64 @@
+https://laravel.com/docs/5.3/validation#manually-creating-validators
+20-12-2016
+Created Dashboard view and head, header, left-sidebar, right-sidebar, footer, admin files.
+Replicated FlatLab dashboard in above files.
+------------------------------------------------------------------------------------
+21-12-2016
+Migration of database
+Created migration files for tables.
+Created Group in web.php and added Route::resource author in it.
+Added "Author" menu item in left-sidebar file in includes folder.
+Created Author controller and model
+Created Author view
+- Listing of authors page
+- Create new author page
+Set return view in author controller respective methods
+
+Installed below required library and added provides and aliases in config/app.php file
+- https://laravelcollective.com/docs/5.3/html
+------------------------------------------------------------------------------------
+22-12-2016
+Author Form validation (validation of name, email in controller file)
+Author Save function in controller (done code to save author)
+Retrieve data from authors table in controller file and displayed them in list.blade.php file.
+Added save and save&close button in create author file.
+------------------------------------------------------------------------------------
+23-12-2016
+Completed CRUD operations for author view
+------------------------------------------------------------------------------------
+26-12-2016
+
+IMP Note:
+Set database setting in .env file first.
+Create database in phpmyadmin
+To create database use php artisan migrate (and other options of migrate)
+To create controller file with required methods use below command:
+- php artisan make:controller controller_File_name resource
+
+To create model file
+- php artisan make:model model_file_name
+
+To create database using existing database files
+- php artisan migrate
+- php artisan migrate:reset (to empty database)
+- php artisan migrate:rollback (to rollback last database action)
+
+------------------------------------------------------------------------------------
+28-12-2016
+Create login view with authentication
+- https://laravel.com/docs/5.3/authentication
+------------------------------------------------------------------------------------
+17-01-2017
+Installed new laravel (larvel_blog) and developing below application
+https://dotdev.co/step-by-step-guide-to-building-your-first-laravel-application-8396503d88#.1fy7nuyi1
+
+
+------------------------------------------------------------------------------------
+25-01-2017
+Done One to many and One To Many (Inverse) relationship.
+https://laravel.com/docs/5.3/eloquent-relationships#one-to-one
+1 Author has multiple books and 1 Book has one Author
+- /var/www/laravel_demo_1/app/Book.php (function author())
+- /var/www/laravel_demo_1/app/Http/Controllers/BookController.php ($author = Book::find($id)->author;)
+- /var/www/laravel_demo_1/app/Author.php (function books())
+- /var/www/laravel_demo_1/app/Http/Controllers/AuthorController.php ($books  = Author::find($id)->books;)
